@@ -1,13 +1,17 @@
 <%= link_to 'Log Out', '/logout' %>
-<br/>
-<%=@user.name%><br/>
-address: <%=@user.address%><br/>
-balance: <%=@user.balance%><br/>
 
-<br/>
-<br/>
-<%= render 'list-of-past-transactions.html' %><br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <br/>
+          <%=@user.name%><br/>
+        address: <%=@user.address%><br/>
+        balance: <%=@user.balance%><br/>
+    </div>
+  </div>
+  <%= render 'list-of-past-transactions.html' %><br>
 
-<%= render 'withdrawls/new' %>
-<%= render 'deposits/new' %>
-<%= render 'transactions/new'%>
+  <%= render 'withdrawls/new' %>
+  <%= render 'deposits/new' %>
+  <%= render 'transactions/new'%>
+</div>

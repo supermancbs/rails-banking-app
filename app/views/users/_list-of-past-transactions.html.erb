@@ -1,15 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
 
-withdrawls:
-<%@user.withdrawls.each do |withdrawl|%>
-  <%=withdrawl.amount%><br/>
-  <%=withdrawl.created_at%><br/>
-  <%end%>
-<br/>
-<br/>
-deposit:
+    <table class="table">
+      <col width="120">
+      withdrawls:
+    <%@user.withdrawls.each do |withdrawl|%>
+      <tr>
+        <th> <%=withdrawl.amount%></th>
+        <th><%=withdrawl.created_at%></th>
+      </tr>
+      <%end%>
+    </col>
+    </tabl>
+    </div>
+  <div/>
 
-  <%@user.deposits.each do |deposit|%>
-    <%=deposit.amount%><br/>
-    <%=deposit.created_at%><br/>
-
-    <%end%>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <col width="120">
+    deposit:
+      <%@user.deposits.each do |deposit|%>
+      <tr>
+        <th><%=deposit.amount%></th>
+        <th><%=deposit.created_at%></th>
+      </tr>
+        <%end%>
+      </col>
+    </table>
+  </div>
+</div>
