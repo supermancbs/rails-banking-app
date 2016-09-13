@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :authorize
+  before_filter :validate_user
   def new
     @user = User.new
   end
@@ -23,10 +25,14 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def validate_user
+    redirect_to user_path(current_user) unless current_user == User.find(params[:id])
+  end
+
   private
 
   def user_create_params
-    params.require(:user).permit(:name, :address, :phone_number, :balance)
+    params.require(:user).permit(:name, :address, :phone_number, :balance, :password, :password_confirmation)
   end
 
 end

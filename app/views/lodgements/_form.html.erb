@@ -1,0 +1,13 @@
+<h2>New Lodgement</h2>
+
+<%= form_for @lodgement do |f| %>
+
+<div class="actions">
+  <%= f.label :amount %>
+  <%= f.text_field :amount %><br><br>
+
+  <%= f.hidden_field :user_id, :value => @user.id %>
+
+  <%= f.submit %>
+</div>
+<% end %>

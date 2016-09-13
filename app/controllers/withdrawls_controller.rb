@@ -1,5 +1,5 @@
 class WithdrawlsController < ApplicationController
-
+before_filter :authorize
   def create
     @withdrawl = Withdrawl.create(withdrawls_params)
     @user = User.find(withdrawls_params[:user_id])

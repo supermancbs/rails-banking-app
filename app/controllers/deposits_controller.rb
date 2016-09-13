@@ -1,5 +1,5 @@
 class DepositsController < ApplicationController
-
+  before_filter :authorize
   def new
     @deposit = Deposit.new
   end

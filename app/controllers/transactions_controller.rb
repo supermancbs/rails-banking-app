@@ -1,5 +1,5 @@
 class TransactionsController < ApplicationController
-
+before_filter :authorize
   def create
     @user = User.find(transaction_create_params[:buyer_id])
     @seller = User.find(transaction_create_params[:seller_id])
