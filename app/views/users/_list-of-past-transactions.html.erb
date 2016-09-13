@@ -1,1 +1,6 @@
-Address: <%=@user.address%>
+
+withdrawls:
+<%@user.withdrawls.each do |withdrawl|%>
+  <%=withdrawl.amount%><br/>
+
+  <%end%>
