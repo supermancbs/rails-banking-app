@@ -1,23 +1,5 @@
 require 'rails_helper'
 
-
-# create_table "users", force: :cascade do |t|
-#   t.string   "name"
-#   t.string   "address"
-#   t.string   "phone_number"
-#   t.integer  "balance"
-#   t.datetime "created_at",   null: false
-#   t.datetime "updated_at",   null: false
-# end
-#
-# create_table "withdrawls", force: :cascade do |t|
-#   t.integer  "user_id"
-#   t.integer  "amount"
-#   t.datetime "created_at", null: false
-#   t.datetime "updated_at", null: false
-# end
-
-
 RSpec.describe User, type: :model do
 
   it "has withdrawls" do
@@ -29,8 +11,22 @@ RSpec.describe User, type: :model do
   it "has lodgements" do
     clark = User.create!(name: "Clark", address: "123 Main", phone_number: "917", balance: 50)
     lodgement = Lodgement.create!(user: clark, amount: 10)
-
     expect(clark.lodgements).to eq([lodgement])
+  end
+
+  it "has buys" do
+    clark = User.create!(name: "Clark", address: "123 Main", phone_number: "917", balance: 50)
+    seller = User.create!(name: "rose", address: "123 plain", balance: 100)
+    buy = Transaction.create!(buyer: clark, seller: seller, amount: 10)
+
+    expect(clark.buys).to eq([buy])
+  end
+
+  it "has sells" do
+    clark = User.create!(name: "Clark", address: "123 Main", phone_number: "917", balance: 50)
+    buyer = User.create!(name: "rose", address: "123 plain", balance: 100)
+    sell = Transaction.create!(buyer: buyer, seller: clark, amount: 10)
+    expect(clark.sells).to eq([sell])
   end
 
 end
