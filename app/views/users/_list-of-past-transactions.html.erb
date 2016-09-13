@@ -1,33 +1,48 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+      <table class="table">
+        <col width="120">
 
-    <table class="table">
-      <col width="120">
-      withdrawls:
-    <%@user.withdrawls.each do |withdrawl|%>
-      <tr>
-        <th> <%=withdrawl.amount%></th>
-        <th><%=withdrawl.created_at%></th>
-      </tr>
-      <%end%>
-    </col>
-    </tabl>
+          <tbody>
+            <h2>Withdrawl</h2>
+            <tr>
+              <th>Amount</th>
+              <th>Date</th>
+            </tr>
+              <%@user.withdrawls.each do |withdrawl|%>
+                <tr>
+                  <th> <%=withdrawl.amount%></th>
+                  <th><%=withdrawl.created_at%></th>
+                </tr>
+              <%end%>
+          </tbody>
+        </col>
+      </tabl>
     </div>
   <div/>
 
+
   <div class="row">
     <div class="col-md-12">
-      <table class="table">
+
+      <table class="table table-hover">
         <col width="120">
-    deposit:
-      <%@user.deposits.each do |deposit|%>
-      <tr>
-        <th><%=deposit.amount%></th>
-        <th><%=deposit.created_at%></th>
-      </tr>
-        <%end%>
-      </col>
+
+          <tbody>
+            <h2>Deposits</h2>
+            <tr>
+              <th>Amount</th>
+              <th>Date</th>
+            </tr>
+              <%@user.deposits.each do |deposit|%>
+              <tr>
+                <th><%=deposit.amount%></th>
+                <th><%=deposit.created_at%></th>
+              </tr>
+                <%end%>
+            </tbody>
+        </col>
     </table>
   </div>
 </div>
