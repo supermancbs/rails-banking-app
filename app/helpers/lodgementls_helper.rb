@@ -1,0 +1,2 @@
+module LodgementlsHelper
+end
