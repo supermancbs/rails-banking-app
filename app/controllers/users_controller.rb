@@ -16,6 +16,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @deposit = Deposit.new
     @withdrawl = Withdrawl.new
+    @transaction = Transaction.new
+  end
+
+  def index
+    @users = User.all
   end
 
   private

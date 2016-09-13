@@ -1,0 +1,12 @@
+<h2>New Transfer</h2>
+
+<%= form_for @transaction do |f| %>
+
+<div class="actions">
+  <%= f.label :amount %>
+  <%= f.text_field :amount %><br><br>
+  <%= f.collection_select :seller_id, User.all, :id, :name %>
+  <%= f.hidden_field :buyer_id, :value => @user.id %>
+  <%= f.submit %>
+</div>
+<% end %>
