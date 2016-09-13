@@ -2,5 +2,14 @@
 withdrawls:
 <%@user.withdrawls.each do |withdrawl|%>
   <%=withdrawl.amount%><br/>
-
+  <%=withdrawl.created_at%><br/>
   <%end%>
+<br/>
+<br/>
+deposit:
+
+  <%@user.deposits.each do |deposit|%>
+    <%=deposit.amount%><br/>
+    <%=deposit.created_at%><br/>
+
+    <%end%>

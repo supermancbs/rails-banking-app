@@ -11,7 +11,7 @@ class WithdrawlsController < ApplicationController
   private
 
   def withdrawls_params
-    params.require(:withdrawl).permit(:amount, :user_id)
+    params.require(:deposit).permit(:amount, :user_id)
   end
 
 end

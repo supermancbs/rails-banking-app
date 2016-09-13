@@ -1,0 +1,13 @@
+<h2>New Deposit</h2>
+
+<%= form_for @deposit do |f| %>
+
+<div class="actions">
+  <%= f.label :amount %>
+  <%= f.text_field :amount %><br><br>
+
+  <%= f.hidden_field :user_id, :value => @user.id %>
+
+  <%= f.submit %>
+</div>
+<% end %>
