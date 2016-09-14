@@ -3,15 +3,29 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <br/>
-          <%=@user.name%><br/>
-        address: <%=@user.address%><br/>
-        balance: <%=@user.balance%><br/>
+      <table class="table">
+        <col width="120">
+          <tbody>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Balance</th>
+            </tr>
+            <tr>
+              <th><%=@user.name%></th>
+              <th><%=@user.address%></th>
+              <th><%=@user.balance%></th>
+            </tr>
+          </tbody>
+        </col>
+      </table>
     </div>
   </div>
-  <%= render 'list-of-past-transactions.html' %><br>
+    <%= render 'list-of-past-transactions.html' %><br>
 
-  <%= render 'withdrawls/new' %>
-  <%= render 'deposits/new' %>
-  <%= render 'transactions/new'%>
+    <%= render 'withdrawls/new' %>
+
+    <%= render 'deposits/new' %>
+      <br/>  <br/>
+    <%= render 'transactions/new'%>
 </div>

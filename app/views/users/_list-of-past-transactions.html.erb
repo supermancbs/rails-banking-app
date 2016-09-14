@@ -1,9 +1,8 @@
-<div class="container">
+
   <div class="row">
     <div class="col-md-12">
-      <table class="table">
+      <table class="table table-hover">
         <col width="120">
-
           <tbody>
             <h2>Withdrawl</h2>
             <tr>
@@ -18,7 +17,7 @@
               <%end%>
           </tbody>
         </col>
-      </tabl>
+      </table>
     </div>
   <div/>
 
@@ -44,3 +43,52 @@
     </table>
   </div>
 </div>
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-hover">
+        <col width="120">
+          <tbody>
+            <h2>Transfer Out</h2>
+            <tr>
+              <th>To</th>
+              <th>Amount</th>
+              <th>Date</th>
+            </tr>
+              <%@user.buys.each do |buy|%>
+                <tr>
+                  <th> <%=buy.seller.name%></th>
+                  <th><%=buy.amount%></th>
+                  <th><%=buy.created_at%></th>
+                </tr>
+              <%end%>
+          </tbody>
+        </col>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-hover">
+        <col width="120">
+          <tbody>
+            <h2>Transfer In</h2>
+            <tr>
+              <th>From</th>
+              <th>Amount</th>
+              <th>Date</th>
+            </tr>
+              <%@user.sells.each do |buy|%>
+                <tr>
+                  <th> <%=buy.buyer.name%></th>
+                  <th><%=buy.amount%></th>
+                  <th><%=buy.created_at%></th>
+                </tr>
+              <%end%>
+          </tbody>
+        </col>
+      </table>
+    </div>
+  </div>

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :authorize
-  before_filter :validate_user
+  before_filter :authorize, only: [:show, :index]
+  before_filter :validate_user, only: [:show, :index]
   def new
     @user = User.new
   end
